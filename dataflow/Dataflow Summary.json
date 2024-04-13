@@ -33,7 +33,11 @@
 						"referenceName": "PayrollSummary",
 						"type": "DatasetReference"
 					},
-					"name": "Filesink"
+					"name": "Filesink",
+					"rejectedDataLinkedService": {
+						"referenceName": "ls_files",
+						"type": "LinkedServiceReference"
+					}
 				}
 			],
 			"transformations": [
@@ -158,7 +162,12 @@
 				"     preCommands: [],",
 				"     postCommands: [],",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> Filesink"
+				"     skipDuplicateMapOutputs: true,",
+				"     mapColumn(",
+				"          AgencyName,",
+				"          FiscalYear,",
+				"          TotalPaid",
+				"     )) ~> Filesink"
 			]
 		}
 	}
