@@ -153,6 +153,7 @@
 				"     errorHandlingOption: 'stopOnFirstError') ~> Summary",
 				"AggrageTotal sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
+				"     truncate: true,",
 				"     umask: 0022,",
 				"     preCommands: [],",
 				"     postCommands: [],",
