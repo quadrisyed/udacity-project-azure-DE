@@ -138,7 +138,11 @@
 								"referenceName": "PayrollSummary",
 								"type": "DatasetReference"
 							},
-							"name": "Filesink"
+							"name": "Filesink",
+							"rejectedDataLinkedService": {
+								"referenceName": "ls_files",
+								"type": "LinkedServiceReference"
+							}
 						}
 					],
 					"transformations": [
@@ -263,14 +267,19 @@
 						"     preCommands: [],",
 						"     postCommands: [],",
 						"     skipDuplicateMapInputs: true,",
-						"     skipDuplicateMapOutputs: true) ~> Filesink"
+						"     skipDuplicateMapOutputs: true,",
+						"     mapColumn(",
+						"          AgencyName,",
+						"          FiscalYear,",
+						"          TotalPaid",
+						"     )) ~> Filesink"
 					]
 				}
 			},
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/pipeline1')]",
+			"name": "[concat(parameters('factoryName'), '/PayrollSummarypipeline')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
