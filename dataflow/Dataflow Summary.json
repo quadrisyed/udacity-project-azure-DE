@@ -27,6 +27,13 @@
 						"type": "DatasetReference"
 					},
 					"name": "Summary"
+				},
+				{
+					"dataset": {
+						"referenceName": "PayrollSummary",
+						"type": "DatasetReference"
+					},
+					"name": "Filesink"
 				}
 			],
 			"transformations": [
@@ -143,7 +150,14 @@
 				"     format: 'table',",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
-				"     errorHandlingOption: 'stopOnFirstError') ~> Summary"
+				"     errorHandlingOption: 'stopOnFirstError') ~> Summary",
+				"AggrageTotal sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> Filesink"
 			]
 		}
 	}
