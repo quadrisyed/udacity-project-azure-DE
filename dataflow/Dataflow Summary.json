@@ -163,6 +163,7 @@
 				"     postCommands: [],",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
+				"     quoteAll: true,",
 				"     mapColumn(",
 				"          AgencyName,",
 				"          FiscalYear,",
