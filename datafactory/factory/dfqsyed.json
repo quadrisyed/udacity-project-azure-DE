@@ -1,0 +1,9 @@
+{
+	"name": "dfqsyed",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "f301f82b-9043-4393-a3c3-e08cee951431",
+		"tenantId": "f958e84a-92b8-439f-a62d-4f45996b6d07"
+	}
+}
